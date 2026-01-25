@@ -1,0 +1,18 @@
+# Stock prices (manually defined)
+stocks = {
+    "TCS": 3500,
+    "Infosys": 1500,
+    "Reliance": 2500
+}
+
+total_investment = 0
+
+print("Stock Portfolio Tracker\n")
+
+for stock, price in stocks.items():
+    quantity = int(input(f"Enter quantity for {stock}: "))
+    investment = price * quantity
+    total_investment += investment
+    print(f"Investment in {stock}: ₹{investment}")
+
+print("\nTotal Portfolio Investment: ₹", total_investment)
