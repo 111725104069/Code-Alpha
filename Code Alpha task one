@@ -19,7 +19,9 @@ while wrong < limit:
             display = display + "_"
 
     print("\nWord:", display)
-    print("Wrong attempts left:", limit - wrong)
+    print("Wrong attempts left:", limit - wrong) 
+// print("Wrong attempts left:", limit - wrong)
+//  letter = input("Enter a letter 
 
     if display == word:
         print("You won the game!")
