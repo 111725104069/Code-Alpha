@@ -1,18 +1,42 @@
-# Stock prices (manually defined)
-stocks = {
-    "TCS": 3500,
-    "Infosys": 1500,
-    "Reliance": 2500
-}
+import random
 
-total_investment = 0
+words = ["apple", "train", "house", "phone", "books"]
+word = random.choice(words)
 
-print("Stock Portfolio Tracker\n")
+guessed = []
+wrong = 0
+limit = 6
 
-for stock, price in stocks.items():
-    quantity = int(input(f"Enter quantity for {stock}: "))
-    investment = price * quantity
-    total_investment += investment
-    print(f"Investment in {stock}: ₹{investment}")
+print("Hangman Game")
+print("Guess the word letter by letter")
 
-print("\nTotal Portfolio Investment: ₹", total_investment)
+while wrong < limit:
+    display = ""
+    for i in word:
+        if i in guessed:
+            display = display + i
+        else:
+            display = display + "_"
+
+    print("\nWord:", display)
+    print("Wrong attempts left:", limit - wrong)
+
+    if display == word:
+        print("You won the game!")
+        break
+
+    letter = input("Enter a letter: ").lower()
+
+    if letter in guessed:
+        print("Already guessed")
+    elif letter in word:
+        guessed.append(letter)
+        print("Correct")
+    else:
+        guessed.append(letter)
+        wrong = wrong + 1
+        print("Wrong")
+
+if wrong == limit:
+    print("\nGame Over")
+    print("The word was:", word)
