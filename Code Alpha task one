@@ -1,7 +1,7 @@
 import random
 
 words = ["apple", "train", "house", "phone", "books"]
-word = random.choice(words)
+word = random.choice(words)       
 
 guessed = []
 wrong = 0
@@ -20,10 +20,9 @@ while wrong < limit:
 
     print("\nWord:", display)
     print("Wrong attempts left:", limit - wrong) 
-// print("Wrong attempts left:", limit - wrong)
-//  letter = input("Enter a letter 
 
-    if display == word:
+
+if display == word:
         print("You won the game!")
         break
 
