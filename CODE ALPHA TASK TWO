@@ -1,25 +1,29 @@
-# Stock prices dictionary
-stocks = {
+stock_price = {
     "AAPL": 180,
     "TSLA": 250,
-    "GOOG": 140,
-    "MSFT": 300
+    "GOOG": 140
 }
 
 total = 0
 
-count = int(input("Enter number of stocks: "))
+n = int(input("Enter how many stocks you want: "))
 
-for i in range(count):
-    name = input("Enter stock name: ")
-    qty = int(input("Enter quantity: "))
+for i in range(n):
+    stock = input("Enter stock name: ")
+    quantity = int(input("Enter quantity: "))
     
-    name = name.upper()
+    stock = stock.upper()
     
-    if name in stocks:
-        price = stocks[name]
-        amount = price * qty
-        total = total + amount
+    if stock in stock_price:
+        price = stock_price[stock]
+        value = price * quantity
+        print("Value of", stock, "is", value)
+        total = total + value
+    else:
+        print("Stock not found")
+
+print("Total investment is", total)
+
         print("Amount for", name, "=", amount)
     else:
         print("Stock not available")
