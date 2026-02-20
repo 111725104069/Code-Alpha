@@ -1,17 +1,14 @@
 import os
 import shutil
 
-# Source folder path
+
 source_folder = "images"
 
-# Destination folder path
 destination_folder = "new_images"
 
-# Create destination folder if not exists
 if not os.path.exists(destination_folder):
     os.mkdir(destination_folder)
 
-# Get all files from source folder
 files = os.listdir(source_folder)
 
 for file in files:
